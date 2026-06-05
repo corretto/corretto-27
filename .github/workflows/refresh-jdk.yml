@@ -29,29 +29,13 @@ jobs:
                 git config user.email "no-reply@amazon.com"
                 git config user.name "corretto-github-robot"
                 
-            - name: "Merge openjdk/jdk:master to the corretto-jdk:develop"
+            - name: "Merge openjdk/jdk:jdk27 to the corretto-27:develop"
               run: |
-                git fetch $UPSTREAM_REMOTE master || exit 1
+                git fetch $UPSTREAM_REMOTE jdk27 || exit 1
                 git merge -m "Merge upstream-jdk" FETCH_HEAD
                 
             - name: "Update Corretto version"
               shell: bash
               run: bash ./.github/scripts/update-version.sh $UPSTREAM_REMOTE
-            - name: "Push to the corretto-jdk"
+            - name: "Push to the corretto-27"
               run: git push origin $LOCAL_BRANCH
-              
-            - name: "Merge openjdk/leyden:premain to leyden"
-              shell: bash
-              run: |
-                git checkout $LOCAL_LEYDEN
-                git fetch $UPSTREAM_LEYDEN premain || exit 1
-                git merge -m "Merging openjdk/leyden:premain to corretto-jdk:leyden" FETCH_HEAD
-                git push origin $LOCAL_LEYDEN
-
-            - name: "Update leyden version.txt from develop"
-              shell: bash
-              run: |
-                git checkout $LOCAL_LEYDEN
-                git restore --source origin/$LOCAL_BRANCH --staged --worktree -- version.txt
-                git commit -m "Automerged version.txt from $LOCAL_BRANCH to $LOCAL_LEYDEN" || true
-                git push origin $LOCAL_LEYDEN
