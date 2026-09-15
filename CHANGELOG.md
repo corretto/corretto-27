@@ -25,7 +25,6 @@ Release Date: September 15, 2026
  | Issue Name       | Platform | Description                                | Link                                                               |
  |------------------|----------|--------------------------------------------|--------------------------------------------------------------------|
  | Import jdk-27+35 | All      | Updates Corretto baseline to OpenJDK 27+35 | [jdk-27+35](https://github.com/openjdk/jdk/releases/tag/jdk-27+35) |
- | Add distro build flags for AL2027 | AL2027 | Adds flags to support build on AL2027 | [#2](https://github.com/corretto/corretto-27/pull/2) |
  | JDK-8388214, JDK-8391256, JDK-8390380  | All | Updates Timezone Data to tzdata2026c | [#3](https://github.com/corretto/corretto-27/pull/4)|
  | JDK-8390874 | All | MethodData::extra_data_lock memory leak | [#5](https://github.com/corretto/corretto-27/pull/5) |
 
