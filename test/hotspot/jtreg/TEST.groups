@@ -315,7 +315,8 @@ tier1_gc_shenandoah = \
   gc/shenandoah/compiler/ \
   gc/shenandoah/mxbeans/ \
   gc/shenandoah/TestSmallHeap.java \
-  gc/shenandoah/oom/
+  gc/shenandoah/oom/ \
+  gtest/ShenandoahGtests.java
 
 tier2_gc_shenandoah = \
   runtime/MemberName/MemberNameLeak.java \
@@ -434,6 +435,7 @@ hotspot_appcds_dynamic = \
  -runtime/cds/appcds/resolvedConstants \
  -runtime/cds/appcds/ArchiveRelocationTest.java \
  -runtime/cds/appcds/BadBSM.java \
+ -runtime/cds/appcds/ClassPathAttrCircularReference.java \
  -runtime/cds/appcds/CommandLineFlagCombo.java \
  -runtime/cds/appcds/DumpClassList.java \
  -runtime/cds/appcds/DumpClassListWithLF.java \

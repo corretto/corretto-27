@@ -113,16 +113,13 @@ public:
   inline oop load_reference_barrier(DecoratorSet decorators, oop obj, T* load_addr);
 
   template <typename T>
-  inline oop oop_load(DecoratorSet decorators, T* addr);
-
-  template <typename T>
   inline oop oop_cmpxchg(DecoratorSet decorators, T* addr, oop compare_value, oop new_value);
 
   template <typename T>
   inline oop oop_xchg(DecoratorSet decorators, T* addr, oop new_value);
 
   template <DecoratorSet decorators, typename T>
-  void write_ref_field_post(T* field);
+  void write_ref_field_post(T* field, oop new_value);
 
   void write_ref_array(HeapWord* start, size_t count);
 
@@ -148,6 +145,9 @@ public:
     typedef BarrierSet::AccessBarrier<decorators, BarrierSetT> Raw;
 
   private:
+    template <typename T>
+    static oop oop_load_common(DecoratorSet resolved_decorators, T* addr);
+
     template <typename T>
     static void oop_store_common(T* addr, oop value);
 

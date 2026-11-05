@@ -880,6 +880,10 @@ public:
   uint8_t barrier_data() { return _barrier_data; }
   void set_barrier_data(uint8_t barrier_data) { _barrier_data = barrier_data; }
 
+#ifndef PRODUCT
+  virtual void dump_spec(outputStream *st) const;
+#endif
+
 private:
   virtual bool depends_only_on_test_impl() const { return false; }
 };
@@ -1242,6 +1246,10 @@ public:
   static void set_load_store_pair(MemBarNode* leading, MemBarNode* trailing);
 
   void remove(PhaseIterGVN *igvn);
+
+#ifndef PRODUCT
+  virtual void dump_spec(outputStream *st) const;
+#endif
 };
 
 // "Acquire" - no following ref can move before (but earlier refs can
