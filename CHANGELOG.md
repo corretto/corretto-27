@@ -2,6 +2,48 @@
 
 The following sections describe the changes for each release of Amazon Corretto 27.
 
+## Corretto version: 27.0.1.1.4
+Release Date: November 17, 2026
+
+**Target Platforms**
+
++ RPM-based Linux using glibc 2.17 or later, x86_64
++ Debian-based Linux using glibc 2.17 or later, x86_64
++ RPM-based Linux using glibc 2.17 or later, aarch64
++ Debian-based Linux using glibc 2.17 or later, aarch64
++ Alpine-based Linux, x86_64
++ Alpine-based Linux, aarch64
++ Windows 11 or later, x86_64
++ macOS 15.0 and later, x86_64
++ macOS 15.0 and later, aarch64
+
+**1.** This is the platform targeted by the build. See [Using Amazon Corretto](https://aws.amazon.com/corretto/faqs/#Using_Amazon_Corretto)
+in the Amazon Corretto FAQ for supported platforms
+
+The following issues are addressed in 27.0.1.1.4:
+
+| Issue Name | Platform | Description | Link |
+|------------|----------|-------------|------|
+| Import jdk-27.0.1.1+4 | All | Updates Corretto baseline to OpenJDK 27.0.1.1+4 | [jdk-27.0.1.1+4](https://github.com/openjdk/jdk27u/releases/tag/jdk-27.0.1.1+4) |
+| Remove emSign C1 and C3 roots from amazon-cacerts | All | Remove emSign C1 and C3 roots from amazon-cacerts | [#22](https://github.com/corretto/corretto-27/pull/22) |
+| JDK-8396048 | All | (tz) Update to tzdata2026f | [JDK-8396048](https://bugs.openjdk.org/browse/JDK-8396048) |
+
+
+The following CVEs are addressed in 27.0.1.1.4
+
+| CVE | CVSS | Component |
+|-----|------|-----------|
+| CVE-2026-114938 | 8.1 | hotspot/compiler |
+| CVE-2026-114939 | 7.4 | security-libs/org.ietf.jgss |
+| CVE-2026-114940 | 7.4 | security-libs/javax.net.ssl |
+| CVE-2026-114941 | 7.0 | hotspot/compiler |
+| CVE-2026-114942 | 7.0 | core-libs |
+| CVE-2026-114943 | 6.5 | hotspot/runtime |
+| CVE-2026-114944 | 5.9 | core-svc/java.lang.management |
+| CVE-2026-114945 | 5.3 | core-libs/java.lang |
+| CVE-2026-114946 | 4.8 | hotspot/compiler |
+| CVE-2026-114947 | 3.7 | security-libs/javax.net.ssl |
+
 ## Corretto version: 27.0.1.0.11
 Release Date: October 24, 2026
 
